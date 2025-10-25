@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Underwater Bioluminescent Reef – Concept Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scene" aria-hidden="true">
+    <div class="gradient-layer"></div>
+    <div class="caustics-layer"></div>
+    <div class="particle-layer" id="particle-layer"></div>
+    <div class="light-beams">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <main class="hud" role="main">
+    <header class="hud__header">
+      <h1>Underwater Bioluminescent Reef</h1>
+      <p class="hud__tagline">Immersive prompt-driven chat within a luminescent coral sanctuary.</p>
+    </header>
+
+    <section class="prompt-panel" aria-live="polite">
+      <form class="prompt-form" id="prompt-form">
+        <label class="prompt-form__label" for="prompt-input">Image prompt</label>
+        <div class="prompt-form__field">
+          <input
+            id="prompt-input"
+            name="prompt"
+            type="text"
+            placeholder="Describe the scene you want to summon..."
+            autocomplete="off"
+            required
+            aria-describedby="prompt-help"
+          />
+          <button type="submit" class="primary-action">Generate</button>
+          <button type="button" class="secondary-action" id="remix-button">Remix</button>
+        </div>
+        <p class="prompt-form__help" id="prompt-help">
+          Focus expands the panel, while submissions glow nearby coral and log the request below.
+        </p>
+      </form>
+
+      <ul class="prompt-history" id="prompt-history" aria-label="Prompt history"></ul>
+    </section>
+
+    <section class="chat-panel" aria-label="Chat transcript">
+      <div class="chat-panel__glass"></div>
+      <div class="chat-panel__content" id="chat-content">
+        <article class="chat-message chat-message--system">
+          <header>Reef Guide</header>
+          <p>Welcome to the reef! Submit an image prompt to see the UI respond.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="hud__footer">
+    <button type="button" class="control control--toggle" id="ambient-toggle" aria-pressed="false">
+      Reduce Motion
+    </button>
+    <button type="button" class="control">Save Prompt</button>
+    <button type="button" class="control">Share</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
